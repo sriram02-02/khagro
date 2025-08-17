@@ -10,6 +10,9 @@ export const products = pgTable("products", {
   category: varchar("category").notNull(),
   image: text("image").notNull(),
   specifications: text("specifications").array().notNull(),
+  detailedItems: text("detailed_items").array().notNull(),
+  categoryIcon: text("category_icon").notNull(),
+  gradient: text("gradient").notNull(),
 });
 
 export const contactSubmissions = pgTable("contact_submissions", {

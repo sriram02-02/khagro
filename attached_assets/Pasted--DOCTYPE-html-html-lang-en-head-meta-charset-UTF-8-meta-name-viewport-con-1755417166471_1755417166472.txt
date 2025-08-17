@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KH AGRO - Premium Agricultural Exports from India</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 150px 20px 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.2s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #764ba2;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease 0.4s;
+            animation-fill-mode: both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .product-card:nth-child(2) .product-header {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .product-card:nth-child(3) .product-header {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .product-card:nth-child(4) .product-header {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        .product-card:nth-child(5) .product-header {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+        }
+
+        .product-content {
+            padding: 30px;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .product-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Infrastructure Section */
+        .infrastructure {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .infrastructure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .infrastructure-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .infrastructure-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .infrastructure-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .infrastructure-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .contact-item p {
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 20px auto;
+            padding: 0;
+            width: 95%;
+            max-width: 1200px;
+            border-radius: 15px;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 35px;
+            cursor: pointer;
+            color: white;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .close:hover {
+            background: #ff4444;
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-header h2 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .modal-header p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .product-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-item-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-item-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-item-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-item-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .enquire-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .enquire-btn:hover {
+            background: linear-gradient(135deg, #5a67d8, #6b46c1);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Different gradient colors for different product categories */
+        #pulses-modal .modal-header {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        #spices-modal .modal-header {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        #blended-modal .modal-header {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        #ground-modal .modal-header {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+        }
+
+        /* Product specific images backgrounds */
+        .rice-image {
+            background: linear-gradient(135deg, #f9f3e9, #e8ddc7);
+        }
+
+        .pulse-image {
+            background: linear-gradient(135deg, #ffe4e1, #ffc0b8);
+        }
+
+        .spice-image {
+            background: linear-gradient(135deg, #ffe8d6, #ffd4a3);
+        }
+
+        .blended-image {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+        }
+
+        .ground-image {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .products-grid,
+            .infrastructure-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">KH AGRO</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#infrastructure">Infrastructure</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Premium Quality Agricultural Exports</h1>
+        <p>Your trusted partner for exceptional rice, pulses, and authentic spices sourced directly from India's finest agricultural regions</p>
+        <a href="#products" class="cta-button">Explore Our Products</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About KH AGRO</h2>
+            <p class="section-subtitle">Established excellence in agricultural exports</p>
+            <div class="about-content">
+                <p>KH AGRO STOCKIST AND EXPORTERS PRIVATE LIMITED is a registered Export company. Promoted and managed by professionals with years of experience in related fields like Agriculture Products, Spices, Cereals and other food Items. It was formed primarily to cater to the growing demand for select Indian commodities and other Food products in the overseas markets.</p>
+                <br>
+                <p>Our commitment to quality, reliability, and customer satisfaction has made us a trusted partner for importers across the globe. We maintain strict quality control measures and ensure that all our products meet international standards and regulations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Premium Products</h2>
+            <p class="section-subtitle">Carefully curated selection of finest agricultural products</p>
+            
+            <div class="products-grid">
+                <!-- Rice Card -->
+                <div class="product-card" onclick="openModal('rice')">
+                    <div class="product-header">🌾</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Premium Rice Varieties</h3>
+                        <p class="product-description">Finest quality rice including aromatic Basmati, premium Sona Masoori, and specialty varieties.</p>
+                        <div class="product-buttons">
+                            <button class="btn btn-primary" onclick="event.stopPropagation(); alert('Contact us at: khagrofoods@gmail.com')">Enquire</button>
+                            <button class="btn btn-secondary" onclick="event.stopPropagation(); openModal('rice')">View All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pulses Card -->
+                <div class="product-card" onclick="openModal('pulses')">
+                    <div class="product-header">🫘</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Pulses & Dals</h3>
+                        <p class="product-description">Comprehensive range of nutritious pulses and dals, quality-tested for maximum nutrition.</p>
+                        <div class="product-buttons">
+                            <button class="btn btn-primary" onclick="event.stopPropagation(); alert('Contact us at: khagrofoods@gmail.com')">Enquire</button>
+                            <button class="btn btn-secondary" onclick="event.stopPropagation(); openModal('pulses')">View All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Whole Spices Card -->
+                <div class="product-card" onclick="openModal('spices')">
+                    <div class="product-header">🌶️</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Whole Spices</h3>
+                        <p class="product-description">Authentic whole spices with intense flavors sourced from India's premier spice regions.</p>
+                        <div class="product-buttons">
+                            <button class="btn btn-primary" onclick="event.stopPropagation(); alert('Contact us at: khagrofoods@gmail.com')">Enquire</button>
+                            <button class="btn btn-secondary" onclick="event.stopPropagation(); openModal('spices')">View All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blended Spices Card -->
+                <div class="product-card" onclick="openModal('blended')">
+                    <div class="product-header">🥄</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Blended Spices</h3>
+                        <p class="product-description">Expertly crafted spice blends and traditional masalas for authentic Indian flavors.</p>
+                        <div class="product-buttons">
+                            <button class="btn btn-primary" onclick="event.stopPropagation(); alert('Contact us at: khagrofoods@gmail.com')">Enquire</button>
+                            <button class="btn btn-secondary" onclick="event.stopPropagation(); openModal('blended')">View All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ground Spices Card -->
+                <div class="product-card" onclick="openModal('ground')">
+                    <div class="product-header">🫙</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Ground Spices</h3>
+                        <p class="product-description">Finely ground spice powders processed for freshness and consistent quality.</p>
+                        <div class="product-buttons">
+                            <button class="btn btn-primary" onclick="event.stopPropagation(); alert('Contact us at: khagrofoods@gmail.com')">Enquire</button>
+                            <button class="btn btn-secondary" onclick="event.stopPropagation(); openModal('ground')">View All</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructure Section -->
+    <section id="infrastructure" class="infrastructure">
+        <div class="container">
+            <h2 class="section-title">World-Class Infrastructure</h2>
+            <p class="section-subtitle">State-of-the-art facilities ensuring quality at every step</p>
+            
+            <div class="infrastructure-grid">
+                <div class="infrastructure-item">
+                    <div class="infrastructure-icon">⚙️</div>
+                    <h3>Advanced Processing</h3>
+                    <p>Modern machinery and technology for cleaning, sorting, and processing agricultural products with precision.</p>
+                </div>
+                <div class="infrastructure-item">
+                    <div class="infrastructure-icon">🔬</div>
+                    <h3>Quality Testing Labs</h3>
+                    <p>In-house testing facilities with certified quality control processes ensuring international standards.</p>
+                </div>
+                <div class="infrastructure-item">
+                    <div class="infrastructure-icon">🏭</div>
+                    <h3>Storage Facilities</h3>
+                    <p>Climate-controlled warehouses with advanced pest management systems for optimal preservation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready to partner with us for your agricultural product requirements</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>khagrofoods@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Call Us</h3>
+                    <p>+91 XXXXX XXXXX<br>+91 XXXXX XXXXX</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Visit Us</h3>
+                    <p>Flat No. 304, Krisals County,<br>Syamala Nagar, Guntur - 522006<br>Andhra Pradesh, India</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌍</div>
+                    <h3>Global Reach</h3>
+                    <p>Middle East, Africa, Europe<br>North America, Asia Pacific</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 KH AGRO STOCKIST & EXPORTERS PVT.LTD. All rights reserved.</p>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Rice Modal -->
+    <div id="rice-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('rice')">&times;</span>
+            <div class="modal-header">
+                <h2>Premium Rice Varieties</h2>
+                <p>Discover our exceptional collection of premium rice sourced from India's finest paddy fields</p>
+            </div>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-item-image rice-image">
+                        <span style="font-size: 5rem;">🌾</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Sona Masoori Rice</div>
+                        <div class="product-item-description">Premium medium-grain rice known for its lightweight and aromatic properties</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Sona Masoori Rice\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image rice-image">
+                        <span style="font-size: 5rem;">🌾</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Crystal Sona Masoori</div>
+                        <div class="product-item-description">Extra refined Sona Masoori with crystal-clear grains and superior quality</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Crystal Sona Masoori\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image rice-image">
+                        <span style="font-size: 5rem;">🍚</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Basmati Rice</div>
+                        <div class="product-item-description">Long-grain aromatic rice with distinctive fragrance and delicate flavor</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Basmati Rice\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image rice-image">
+                        <span style="font-size: 5rem;">🌾</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Idli Rava</div>
+                        <div class="product-item-description">Specially processed rice rava perfect for soft and fluffy idlis</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Idli Rava\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image rice-image">
+                        <span style="font-size: 5rem;">🍚</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Idli Rice</div>
+                        <div class="product-item-description">Short-grain parboiled rice ideal for making traditional South Indian idlis</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Idli Rice\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image rice-image">
+                        <span style="font-size: 5rem;">🌾</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Ponni Rice</div>
+                        <div class="product-item-description">Popular South Indian rice variety known for its taste and texture</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Ponni Rice\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pulses Modal -->
+    <div id="pulses-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('pulses')">&times;</span>
+            <div class="modal-header">
+                <h2>Premium Pulses & Dals</h2>
+                <p>Nutritious and protein-rich pulses sourced from India's best agricultural regions</p>
+            </div>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-item-image pulse-image">
+                        <span style="font-size: 5rem;">🫘</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Arhar Dal (Toor Dal)</div>
+                        <div class="product-item-description">Premium split pigeon peas, essential for Indian cuisine</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Arhar Dal\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image pulse-image">
+                        <span style="font-size: 5rem;">🫘</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Chana Dal</div>
+                        <div class="product-item-description">Split Bengal gram, rich in protein and fiber</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Chana Dal\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image pulse-image">
+                        <span style="font-size: 5rem;">⚫</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Urad Dal (Black Gram)</div>
+                        <div class="product-item-description">Premium black lentils, perfect for dosas and idlis</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Urad Dal\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image pulse-image">
+                        <span style="font-size: 5rem;">🔴</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Red Kidney Beans</div>
+                        <div class="product-item-description">High-quality rajma beans, rich in nutrients</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Red Kidney Beans\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image pulse-image">
+                        <span style="font-size: 5rem;">🟠</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Masoor Dal (Red Lentils)</div>
+                        <div class="product-item-description">Quick-cooking red lentils, nutritious and flavorful</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Masoor Dal\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image pulse-image">
+                        <span style="font-size: 5rem;">🟡</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Moong Dal</div>
+                        <div class="product-item-description">Yellow split mung beans, light and easy to digest</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Moong Dal\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spices Modal -->
+    <div id="spices-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('spices')">&times;</span>
+            <div class="modal-header">
+                <h2>Premium Whole Spices</h2>
+                <p>Authentic whole spices with intense flavors from India's spice gardens</p>
+            </div>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-item-image spice-image">
+                        <span style="font-size: 5rem;">🌶️</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Red Chilli Whole</div>
+                        <div class="product-item-description">Premium dried red chillies with vibrant color and heat</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Red Chilli\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image spice-image">
+                        <span style="font-size: 5rem;">⚫</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Black Pepper</div>
+                        <div class="product-item-description">Premium Malabar black pepper with strong aroma</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Black Pepper\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image spice-image">
+                        <span style="font-size: 5rem;">🟢</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Green Cardamom</div>
+                        <div class="product-item-description">Aromatic green cardamom pods from Kerala</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Cardamom\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image spice-image">
+                        <span style="font-size: 5rem;">🟫</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Cinnamon Sticks</div>
+                        <div class="product-item-description">Premium Ceylon cinnamon with sweet aroma</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Cinnamon\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image spice-image">
+                        <span style="font-size: 5rem;">🔸</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Cloves</div>
+                        <div class="product-item-description">High-quality aromatic cloves with intense flavor</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Cloves\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image spice-image">
+                        <span style="font-size: 5rem;">⭐</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Star Anise</div>
+                        <div class="product-item-description">Premium star anise with sweet licorice flavor</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Star Anise\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blended Spices Modal -->
+    <div id="blended-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('blended')">&times;</span>
+            <div class="modal-header">
+                <h2>Signature Blended Spices</h2>
+                <p>Expertly crafted spice blends for authentic Indian flavors</p>
+            </div>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-item-image blended-image">
+                        <span style="font-size: 5rem;">🥄</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Garam Masala</div>
+                        <div class="product-item-description">Traditional blend of aromatic spices for rich flavor</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Garam Masala\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image blended-image">
+                        <span style="font-size: 5rem;">🍛</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Sambar Powder</div>
+                        <div class="product-item-description">South Indian spice blend for authentic sambar</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Sambar Powder\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image blended-image">
+                        <span style="font-size: 5rem;">🍚</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Biryani Masala</div>
+                        <div class="product-item-description">Special blend for aromatic and flavorful biryani</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Biryani Masala\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image blended-image">
+                        <span style="font-size: 5rem;">🥘</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Curry Powder</div>
+                        <div class="product-item-description">Versatile spice blend for various curry dishes</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Curry Powder\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image blended-image">
+                        <span style="font-size: 5rem;">🍖</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Tandoori Masala</div>
+                        <div class="product-item-description">Spice blend for authentic tandoori preparations</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Tandoori Masala\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image blended-image">
+                        <span style="font-size: 5rem;">🥄</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Rasam Powder</div>
+                        <div class="product-item-description">Traditional South Indian spice mix for rasam</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Rasam Powder\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ground Spices Modal -->
+    <div id="ground-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ground')">&times;</span>
+            <div class="modal-header">
+                <h2>Premium Ground Spices</h2>
+                <p>Freshly ground spice powders with maximum flavor and aroma</p>
+            </div>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-item-image ground-image">
+                        <span style="font-size: 5rem;">🟡</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Turmeric Powder</div>
+                        <div class="product-item-description">Pure turmeric powder with vibrant golden color</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Turmeric Powder\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image ground-image">
+                        <span style="font-size: 5rem;">🔴</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Red Chilli Powder</div>
+                        <div class="product-item-description">Premium ground red chilli with perfect heat and color</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Chilli Powder\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image ground-image">
+                        <span style="font-size: 5rem;">🟢</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Coriander Powder</div>
+                        <div class="product-item-description">Fresh ground coriander with aromatic flavor</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Coriander Powder\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image ground-image">
+                        <span style="font-size: 5rem;">🟤</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Cumin Powder</div>
+                        <div class="product-item-description">Premium ground cumin with earthy aroma</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Cumin Powder\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image ground-image">
+                        <span style="font-size: 5rem;">⚫</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Black Pepper Powder</div>
+                        <div class="product-item-description">Freshly ground black pepper with strong flavor</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Black Pepper Powder\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-image ground-image">
+                        <span style="font-size: 5rem;">🟠</span>
+                    </div>
+                    <div class="product-item-content">
+                        <div class="product-item-name">Ginger Powder</div>
+                        <div class="product-item-description">Pure ground ginger with warm, spicy flavor</div>
+                        <button class="enquire-btn" onclick="alert('Enquiry for Ginger Powder\nContact: khagrofoods@gmail.com')">Enquire Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('rice')">&times;</span>
+            <h2 class="modal-header">Premium Rice Varieties</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-item-icon">🌾</div>
+                    <div class="product-item-name">Sona Masoori</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🌾</div>
+                    <div class="product-item-name">Crystal Sona Masoori</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🌾</div>
+                    <div class="product-item-name">Basmati Rice</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🌾</div>
+                    <div class="product-item-name">Idli Rava</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🌾</div>
+                    <div class="product-item-name">Idli Rice</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pulses Modal -->
+    <div id="pulses-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('pulses')">&times;</span>
+            <h2 class="modal-header">Pulses & Dals</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-item-icon">🫘</div>
+                    <div class="product-item-name">Arhar Dal</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🫘</div>
+                    <div class="product-item-name">Chana Dal</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🫘</div>
+                    <div class="product-item-name">Urad Dal</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🫘</div>
+                    <div class="product-item-name">Red Kidney Beans</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🫘</div>
+                    <div class="product-item-name">Masoor Split</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spices Modal -->
+    <div id="spices-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('spices')">&times;</span>
+            <h2 class="modal-header">Whole Spices</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-item-icon">🌶️</div>
+                    <div class="product-item-name">Red Chilli</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🌶️</div>
+                    <div class="product-item-name">Black Pepper</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🌶️</div>
+                    <div class="product-item-name">Cardamom</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🌶️</div>
+                    <div class="product-item-name">Cinnamon</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🌶️</div>
+                    <div class="product-item-name">Cloves</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blended Spices Modal -->
+    <div id="blended-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('blended')">&times;</span>
+            <h2 class="modal-header">Blended Spices</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-item-icon">🥄</div>
+                    <div class="product-item-name">Garam Masala</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🥄</div>
+                    <div class="product-item-name">Sambar Powder</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🥄</div>
+                    <div class="product-item-name">Biryani Masala</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🥄</div>
+                    <div class="product-item-name">Curry Powder</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ground Spices Modal -->
+    <div id="ground-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ground')">&times;</span>
+            <h2 class="modal-header">Ground Spices</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-item-icon">🫙</div>
+                    <div class="product-item-name">Turmeric Powder</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🫙</div>
+                    <div class="product-item-name">Chilli Powder</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🫙</div>
+                    <div class="product-item-name">Coriander Powder</div>
+                    <button class="enquire-btn" onclick="alert('Contact: khagrofoods@gmail.com')">Enquire</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-icon">🫙</div>
+                    <div class="product-item-name">Cu

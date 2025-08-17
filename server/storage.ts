@@ -26,60 +26,140 @@ export class MemStorage implements IStorage {
   private initializeProducts() {
     const sampleProducts: InsertProduct[] = [
       {
-        name: "Smartphones & Mobile Devices",
-        description: "Latest generation smartphones featuring advanced processors, high-resolution cameras, and cutting-edge technology. We source from leading manufacturers to ensure quality and reliability.",
+        name: "Premium Rice Varieties",
+        description: "Finest quality rice including aromatic Basmati, premium Sona Masoori, and specialty varieties sourced directly from India's finest paddy fields.",
+        category: "agriculture",
+        image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        specifications: ["Premium Quality", "Export Grade", "Aromatic Varieties", "Certified Origin"],
+        detailedItems: [
+          "Sona Masoori Rice - Premium medium-grain rice known for its lightweight and aromatic properties",
+          "Crystal Sona Masoori - Extra refined Sona Masoori with crystal-clear grains and superior quality", 
+          "Basmati Rice - Long-grain aromatic rice with distinctive fragrance and delicate flavor",
+          "Idli Rava - Specially processed rice rava perfect for soft and fluffy idlis",
+          "Idli Rice - Short-grain parboiled rice ideal for making traditional South Indian idlis",
+          "Ponni Rice - Popular South Indian rice variety with excellent taste and texture"
+        ],
+        categoryIcon: "🌾",
+        gradient: "linear-gradient(135deg, #667eea, #764ba2)"
+      },
+      {
+        name: "Pulses & Dals",
+        description: "Comprehensive range of nutritious pulses and dals, quality-tested for maximum nutrition and sourced from certified farms.",
+        category: "agriculture", 
+        image: "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        specifications: ["High Protein", "Quality Tested", "Nutritious", "Bulk Supply"],
+        detailedItems: [
+          "Arhar Dal (Toor Dal) - Most popular Indian lentil with rich protein content",
+          "Chana Dal - Split chickpeas with sweet and nutty flavor, high in protein",
+          "Urad Dal - Black gram dal essential for South Indian cuisine",
+          "Red Kidney Beans (Rajma) - Premium quality kidney beans rich in fiber",
+          "Masoor Split - Red lentils that cook quickly and are highly nutritious",
+          "Moong Dal - Yellow split gram that's easy to digest and protein-rich"
+        ],
+        categoryIcon: "🫘",
+        gradient: "linear-gradient(135deg, #f093fb, #f5576c)"
+      },
+      {
+        name: "Whole Spices",
+        description: "Authentic whole spices with intense flavors sourced from India's premier spice regions, carefully selected for export quality.",
+        category: "spices",
+        image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", 
+        specifications: ["Authentic Origins", "Export Quality", "Intense Flavors", "Premium Grade"],
+        detailedItems: [
+          "Red Chilli - Premium quality dried red chilies with perfect heat and color",
+          "Black Pepper - King of spices with strong pungent flavor and aroma",
+          "Green Cardamom - Queen of spices with sweet aromatic flavor",
+          "Cinnamon Sticks - Sweet and woody flavored bark from Ceylon cinnamon",
+          "Cloves - Aromatic flower buds with intense flavor and medicinal properties",
+          "Cumin Seeds - Earthy flavored seeds essential for Indian cooking"
+        ],
+        categoryIcon: "🌶️",
+        gradient: "linear-gradient(135deg, #4facfe, #00f2fe)"
+      },
+      {
+        name: "Blended Spices & Masalas",
+        description: "Expertly crafted spice blends and traditional masalas for authentic Indian flavors, made using time-tested recipes.",
+        category: "spices",
+        image: "https://images.unsplash.com/photo-1599046381984-4704b3463567?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        specifications: ["Traditional Recipes", "Expert Blending", "Authentic Taste", "Consistent Quality"],
+        detailedItems: [
+          "Garam Masala - Traditional spice blend with warm aromatic flavors",
+          "Sambar Powder - South Indian spice mix perfect for sambar and curries",
+          "Biryani Masala - Special blend for aromatic and flavorful biryani",
+          "Curry Powder - Versatile spice blend for various curry dishes",
+          "Tandoori Masala - Spice blend for authentic tandoori preparations",
+          "Rasam Powder - Traditional South Indian spice mix for rasam"
+        ],
+        categoryIcon: "🥄",
+        gradient: "linear-gradient(135deg, #43e97b, #38f9d7)"
+      },
+      {
+        name: "Ground Spices & Powders",
+        description: "Finely ground spice powders processed for freshness and consistent quality, maintaining maximum flavor and aroma.",
+        category: "spices",
+        image: "https://images.unsplash.com/photo-1596207-46900b2-d058c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        specifications: ["Freshly Ground", "Maximum Flavor", "Consistent Quality", "Vibrant Colors"],
+        detailedItems: [
+          "Turmeric Powder - Pure turmeric powder with vibrant golden color and health benefits",
+          "Red Chilli Powder - Premium ground red chilli with perfect heat and color",
+          "Coriander Powder - Fresh ground coriander with aromatic flavor",
+          "Cumin Powder - Premium ground cumin with earthy aroma",
+          "Black Pepper Powder - Freshly ground black pepper with strong flavor",
+          "Ginger Powder - Pure ground ginger with warm, spicy flavor"
+        ],
+        categoryIcon: "🫙", 
+        gradient: "linear-gradient(135deg, #fa709a, #fee140)"
+      },
+      {
+        name: "Electronics & Technology",
+        description: "Latest generation smartphones, computers and electronic devices featuring advanced technology from trusted manufacturers.",
         category: "electronics",
-        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-        specifications: ["5G Compatible", "High-Resolution Cameras", "Long Battery Life", "Premium Build Quality"]
+        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        specifications: ["Latest Technology", "Trusted Brands", "Quality Assured", "Global Standards"],
+        detailedItems: [
+          "Smartphones - Latest 5G compatible devices with high-resolution cameras",
+          "Laptops - Professional grade computers for business and personal use", 
+          "Tablets - Lightweight devices for productivity and entertainment",
+          "Smart Watches - Advanced wearable technology with health monitoring",
+          "Headphones - Premium audio devices with noise cancellation",
+          "Power Banks - High-capacity portable charging solutions"
+        ],
+        categoryIcon: "📱",
+        gradient: "linear-gradient(135deg, #667eea, #764ba2)"
       },
       {
-        name: "Laptops & Computers",
-        description: "Professional grade laptops and desktop computers for business and personal use.",
-        category: "electronics",
-        image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-        specifications: ["High Performance Processors", "Professional Graphics", "Extended Warranty", "Business Support"]
-      },
-      {
-        name: "Premium Fabrics",
-        description: "High-quality cotton, silk, and synthetic fabrics for garment manufacturing.",
+        name: "Premium Textiles",
+        description: "High-quality fabrics and ready-made garments including cotton, silk, and synthetic materials for global fashion markets.",
         category: "textiles",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-        specifications: ["Premium Cotton", "Silk Blends", "Eco-Friendly", "Custom Patterns"]
-      },
-      {
-        name: "Ready-Made Garments",
-        description: "Fashionable clothing and apparel for men, women, and children.",
-        category: "textiles",
-        image: "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-        specifications: ["Fashion Forward", "Quality Materials", "Size Range", "Seasonal Collections"]
+        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        specifications: ["Premium Quality", "Sustainable Materials", "Fashion Forward", "Global Standards"],
+        detailedItems: [
+          "Cotton Fabrics - Premium cotton textiles in various weights and finishes",
+          "Silk Materials - Luxurious silk fabrics with traditional and modern designs",
+          "Ready-Made Garments - Fashionable clothing for men, women, and children",
+          "Home Textiles - Bed linens, curtains, and decorative fabric items",
+          "Technical Textiles - Specialized fabrics for industrial and technical applications",
+          "Organic Textiles - Eco-friendly and sustainably produced fabric materials"
+        ],
+        categoryIcon: "🧵",
+        gradient: "linear-gradient(135deg, #f093fb, #f5576c)"
       },
       {
         name: "Industrial Machinery",
-        description: "Heavy-duty manufacturing equipment and industrial machinery solutions.",
+        description: "Heavy-duty manufacturing equipment and industrial machinery solutions for various sectors including construction and manufacturing.",
         category: "machinery",
-        image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-        specifications: ["Heavy Duty", "Precision Engineering", "Maintenance Support", "Energy Efficient"]
-      },
-      {
-        name: "Construction Equipment",
-        description: "Professional construction tools and equipment for building projects.",
-        category: "machinery",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-        specifications: ["Professional Grade", "Safety Certified", "Durable Build", "Training Included"]
-      },
-      {
-        name: "Agricultural Products",
-        description: "Fresh produce, grains, and agricultural commodities from certified farms.",
-        category: "agriculture",
-        image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-        specifications: ["Organic Certified", "Fresh Quality", "Global Sourcing", "Seasonal Availability"]
-      },
-      {
-        name: "Spices & Food Ingredients",
-        description: "Premium quality spices and food ingredients sourced from authentic origins.",
-        category: "agriculture",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-        specifications: ["Authentic Origins", "Premium Quality", "Bulk Supply", "Custom Blends"]
+        image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        specifications: ["Heavy Duty", "Precision Engineering", "Maintenance Support", "Energy Efficient"],
+        detailedItems: [
+          "Manufacturing Equipment - Automated machinery for production lines",
+          "Construction Machinery - Heavy equipment for building and infrastructure",
+          "Agricultural Machinery - Farming equipment and processing machines",
+          "Textile Machinery - Specialized equipment for fabric production",
+          "Food Processing Equipment - Machines for food manufacturing and packaging",
+          "Packaging Machinery - Automated systems for product packaging and labeling"
+        ],
+        categoryIcon: "⚙️",
+        gradient: "linear-gradient(135deg, #4facfe, #00f2fe)"
       }
     ];
 
@@ -110,7 +190,12 @@ export class MemStorage implements IStorage {
 
   async createContactSubmission(insertContact: InsertContact): Promise<ContactSubmission> {
     const id = randomUUID();
-    const contact: ContactSubmission = { ...insertContact, id };
+    const contact: ContactSubmission = { 
+      ...insertContact, 
+      id,
+      company: insertContact.company || null,
+      service: insertContact.service || null
+    };
     this.contactSubmissions.set(id, contact);
     return contact;
   }

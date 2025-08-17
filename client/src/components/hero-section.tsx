@@ -13,20 +13,20 @@ export default function HeroSection() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl mx-auto px-4">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Global Import Export Solutions
+              Premium Quality Agricultural Exports
             </h1>
             <p className="text-xl md:text-2xl mb-8 font-light">
-              Connecting businesses worldwide with reliable, efficient trade services and premium quality products
+              Your trusted partner for exceptional rice, pulses, and authentic spices sourced directly from India's finest agricultural regions
             </p>
             <div className="space-x-4">
               <Link href="/products">
                 <Button className="bg-brand-orange text-white px-8 py-3 text-lg font-semibold hover:bg-orange-600">
-                  View Products
+                  Explore Our Products
                 </Button>
               </Link>
               <Link href="/contact">
                 <Button variant="outline" className="border-2 border-white text-white px-8 py-3 text-lg font-semibold hover:bg-white hover:text-brand-blue">
-                  Get Quote
+                  Get In Touch
                 </Button>
               </Link>
             </div>

@@ -179,7 +179,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Company Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your company name" {...field} />
+                            <Input placeholder="Enter your company name" {...field} value={field.value || ""} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -192,7 +192,7 @@ export default function Contact() {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>Service Interest</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <Select onValueChange={field.onChange} defaultValue={field.value || ""}>
                             <FormControl>
                               <SelectTrigger>
                                 <SelectValue placeholder="Select a service" />

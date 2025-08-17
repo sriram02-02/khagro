@@ -1,10 +1,40 @@
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import HeroSection from "@/components/hero-section";
 import StatsSection from "@/components/stats-section";
+import ProductCard from "@/components/product-card";
+import ProductModal from "@/components/product-modal";
+import ContactInfoDialog from "@/components/contact-info-dialog";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Award, Globe, Ship, Plane, Truck, FileText, Search, Handshake } from "lucide-react";
+import type { Product } from "@shared/schema";
 
 export default function Home() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+  const [enquiryProduct, setEnquiryProduct] = useState<Product | null>(null);
+  const [enquiryItem, setEnquiryItem] = useState<string>("");
+
+  const { data: products, isLoading } = useQuery<Product[]>({
+    queryKey: ["/api/products"],
+  });
+
+  // Get featured products (first 6 products)
+  const featuredProducts = products?.slice(0, 6) || [];
+
+  const handleViewDetails = (product: Product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleEnquire = (product: Product, itemName?: string) => {
+    setEnquiryProduct(product);
+    setEnquiryItem(itemName || "");
+    setIsContactDialogOpen(true);
+  };
   const services = [
     {
       icon: Ship,
@@ -112,8 +142,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Featured Products Section */}
       <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-brand-dark mb-4">Our Premium Product Categories</h2>
+            <p className="text-lg text-brand-gray max-w-3xl mx-auto">
+              Carefully curated selection of finest products sourced from trusted suppliers worldwide
+            </p>
+          </div>
+          
+          {isLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[...Array(6)].map((_, index) => (
+                <div key={index} className="space-y-4">
+                  <Skeleton className="h-64 w-full rounded-lg" />
+                  <Skeleton className="h-6 w-3/4" />
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-10 w-full" />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onViewDetails={handleViewDetails}
+                  onEnquire={handleEnquire}
+                />
+              ))}
+            </div>
+          )}
+          
+          <div className="text-center mt-12">
+            <Link href="/products">
+              <Button size="lg" className="bg-brand-blue text-white hover:bg-blue-700 px-8 py-3 text-lg">
+                Explore All Products
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-brand-dark mb-4">Ready to Expand Your Business Globally?</h2>
           <p className="text-xl text-brand-gray mb-8 max-w-3xl mx-auto">
@@ -133,6 +207,29 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Product Modal */}
+      <ProductModal
+        product={selectedProduct}
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedProduct(null);
+        }}
+        onEnquire={handleEnquire}
+      />
+
+      {/* Contact Info Dialog */}
+      <ContactInfoDialog
+        isOpen={isContactDialogOpen}
+        onClose={() => {
+          setIsContactDialogOpen(false);
+          setEnquiryProduct(null);
+          setEnquiryItem("");
+        }}
+        product={enquiryProduct}
+        specificItem={enquiryItem}
+      />
     </div>
   );
 }

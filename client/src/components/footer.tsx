@@ -32,22 +32,22 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/services">
-                  <a className="text-gray-300 hover:text-white transition-colors">Export Services</a>
+                  <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Export Services</span>
                 </Link>
               </li>
               <li>
                 <Link href="/services">
-                  <a className="text-gray-300 hover:text-white transition-colors">Import Services</a>
+                  <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Import Services</span>
                 </Link>
               </li>
               <li>
                 <Link href="/services">
-                  <a className="text-gray-300 hover:text-white transition-colors">Logistics Management</a>
+                  <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Logistics Management</span>
                 </Link>
               </li>
               <li>
                 <Link href="/services">
-                  <a className="text-gray-300 hover:text-white transition-colors">Quality Inspection</a>
+                  <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Quality Inspection</span>
                 </Link>
               </li>
             </ul>
@@ -58,22 +58,22 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/products">
-                  <a className="text-gray-300 hover:text-white transition-colors">Electronics</a>
+                  <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Electronics</span>
                 </Link>
               </li>
               <li>
                 <Link href="/products">
-                  <a className="text-gray-300 hover:text-white transition-colors">Textiles</a>
+                  <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Textiles</span>
                 </Link>
               </li>
               <li>
                 <Link href="/products">
-                  <a className="text-gray-300 hover:text-white transition-colors">Machinery</a>
+                  <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Machinery</span>
                 </Link>
               </li>
               <li>
                 <Link href="/products">
-                  <a className="text-gray-300 hover:text-white transition-colors">Agriculture</a>
+                  <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Agriculture</span>
                 </Link>
               </li>
             </ul>

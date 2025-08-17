@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import ProductCard from "@/components/product-card";
 import ProductModal from "@/components/product-modal";
+import ContactInfoDialog from "@/components/contact-info-dialog";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { Product } from "@shared/schema";
@@ -10,6 +11,9 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+  const [enquiryProduct, setEnquiryProduct] = useState<Product | null>(null);
+  const [enquiryItem, setEnquiryItem] = useState<string>("");
 
   const { data: products, isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products"],
@@ -21,6 +25,7 @@ export default function Products() {
     { id: "textiles", label: "Textiles" },
     { id: "machinery", label: "Machinery" },
     { id: "agriculture", label: "Agriculture" },
+    { id: "spices", label: "Spices" },
   ];
 
   const filteredProducts = products?.filter(
@@ -36,14 +41,20 @@ export default function Products() {
     setIsModalOpen(true);
   };
 
+  const handleEnquire = (product: Product, itemName?: string) => {
+    setEnquiryProduct(product);
+    setEnquiryItem(itemName || "");
+    setIsContactDialogOpen(true);
+  };
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
       <section className="bg-brand-light py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-brand-dark mb-6">Our Products</h1>
+          <h1 className="text-5xl font-bold text-brand-dark mb-6">Our Premium Products</h1>
           <p className="text-xl text-brand-gray max-w-3xl mx-auto">
-            High-quality products sourced from trusted manufacturers worldwide, ready for global distribution
+            Carefully curated selection of finest products sourced from trusted suppliers worldwide, ready for global distribution
           </p>
         </div>
       </section>
@@ -57,10 +68,10 @@ export default function Products() {
                 key={category.id}
                 onClick={() => handleCategoryFilter(category.id)}
                 variant={selectedCategory === category.id ? "default" : "outline"}
-                className={`px-6 py-3 rounded-full font-medium transition-colors ${
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? "bg-brand-blue text-white"
-                    : "bg-gray-200 text-brand-gray hover:bg-brand-blue hover:text-white"
+                    ? "bg-brand-blue text-white shadow-lg"
+                    : "bg-white text-brand-gray hover:bg-brand-blue hover:text-white border-2 border-gray-200 hover:border-brand-blue"
                 }`}
               >
                 {category.label}
@@ -70,29 +81,32 @@ export default function Products() {
 
           {/* Products Grid */}
           {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {[...Array(8)].map((_, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[...Array(6)].map((_, index) => (
                 <div key={index} className="space-y-4">
                   <Skeleton className="h-48 w-full rounded-lg" />
-                  <Skeleton className="h-4 w-3/4" />
+                  <Skeleton className="h-6 w-3/4" />
+                  <Skeleton className="h-4 w-full" />
                   <Skeleton className="h-4 w-1/2" />
                   <Skeleton className="h-10 w-full" />
                 </div>
               ))}
             </div>
           ) : filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProducts.map((product) => (
                 <ProductCard
                   key={product.id}
                   product={product}
                   onViewDetails={handleViewDetails}
+                  onEnquire={handleEnquire}
                 />
               ))}
             </div>
           ) : (
             <div className="text-center py-12">
               <p className="text-brand-gray text-lg">No products found in this category.</p>
+              <p className="text-brand-gray text-sm mt-2">Try selecting a different category or view all products.</p>
             </div>
           )}
         </div>
@@ -106,6 +120,19 @@ export default function Products() {
           setIsModalOpen(false);
           setSelectedProduct(null);
         }}
+        onEnquire={handleEnquire}
+      />
+
+      {/* Contact Info Dialog */}
+      <ContactInfoDialog
+        isOpen={isContactDialogOpen}
+        onClose={() => {
+          setIsContactDialogOpen(false);
+          setEnquiryProduct(null);
+          setEnquiryItem("");
+        }}
+        product={enquiryProduct}
+        specificItem={enquiryItem}
       />
     </div>
   );
