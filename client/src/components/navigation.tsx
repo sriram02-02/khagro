@@ -20,25 +20,32 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav className="bg-gradient-to-r from-white via-blue-50 to-white shadow-xl fixed w-full top-0 z-50 border-b-2 border-brand-blue/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <Link href="/">
-              <h1 className="text-xl font-bold text-brand-blue">KH AGRO STOCKIST & EXPORTERS PVT. LTD.</h1>
+              <div className="flex items-center space-x-3">
+                <div className="bg-gradient-to-br from-brand-blue to-blue-700 p-2 rounded-lg">
+                  <span className="text-white font-bold text-lg">🌾</span>
+                </div>
+                <h1 className="text-lg font-bold bg-gradient-to-r from-brand-blue to-blue-700 bg-clip-text text-transparent">
+                  KH AGRO STOCKIST & EXPORTERS PVT. LTD.
+                </h1>
+              </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-center space-x-1">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
                   <span
-                    className={`px-3 py-2 text-sm font-medium transition-colors cursor-pointer ${
+                    className={`px-4 py-2 text-sm font-medium transition-all duration-300 cursor-pointer rounded-lg ${
                       location === item.href
-                        ? "text-brand-dark"
-                        : "text-brand-gray hover:text-brand-blue"
+                        ? "bg-gradient-to-r from-brand-blue to-blue-600 text-white shadow-lg transform scale-105"
+                        : "text-brand-gray hover:text-brand-blue hover:bg-blue-50 hover:shadow-md"
                     }`}
                   >
                     {item.label}
@@ -46,7 +53,7 @@ export default function Navigation() {
                 </Link>
               ))}
               <Link href="/contact">
-                <Button className="bg-brand-orange text-white hover:bg-orange-600">
+                <Button className="bg-gradient-to-r from-brand-orange to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ml-4">
                   Contact
                 </Button>
               </Link>
@@ -69,12 +76,16 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="md:hidden bg-gradient-to-b from-blue-50 to-white border-t-2 border-brand-blue/20 shadow-lg">
+          <div className="px-4 pt-4 pb-6 space-y-2">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
                 <span
-                  className="block px-3 py-2 text-base font-medium text-brand-gray hover:text-brand-blue cursor-pointer"
+                  className={`block px-4 py-3 text-base font-medium rounded-lg cursor-pointer transition-all duration-300 ${
+                    location === item.href
+                      ? "bg-gradient-to-r from-brand-blue to-blue-600 text-white shadow-lg"
+                      : "text-brand-gray hover:text-brand-blue hover:bg-blue-50 hover:shadow-md"
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
@@ -83,7 +94,7 @@ export default function Navigation() {
             ))}
             <Link href="/contact">
               <span
-                className="block px-3 py-2 text-base font-medium text-brand-orange cursor-pointer"
+                className="block px-4 py-3 text-base font-medium bg-gradient-to-r from-brand-orange to-orange-600 text-white rounded-lg cursor-pointer hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact

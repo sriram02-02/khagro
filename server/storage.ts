@@ -110,57 +110,7 @@ export class MemStorage implements IStorage {
         categoryIcon: "🫙", 
         gradient: "linear-gradient(135deg, #fa709a, #fee140)"
       },
-      {
-        name: "Electronics & Technology",
-        description: "Latest generation smartphones, computers and electronic devices featuring advanced technology from trusted manufacturers.",
-        category: "electronics",
-        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-        specifications: ["Latest Technology", "Trusted Brands", "Quality Assured", "Global Standards"],
-        detailedItems: [
-          "Smartphones - Latest 5G compatible devices with high-resolution cameras",
-          "Laptops - Professional grade computers for business and personal use", 
-          "Tablets - Lightweight devices for productivity and entertainment",
-          "Smart Watches - Advanced wearable technology with health monitoring",
-          "Headphones - Premium audio devices with noise cancellation",
-          "Power Banks - High-capacity portable charging solutions"
-        ],
-        categoryIcon: "📱",
-        gradient: "linear-gradient(135deg, #667eea, #764ba2)"
-      },
-      {
-        name: "Premium Textiles",
-        description: "High-quality fabrics and ready-made garments including cotton, silk, and synthetic materials for global fashion markets.",
-        category: "textiles",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-        specifications: ["Premium Quality", "Sustainable Materials", "Fashion Forward", "Global Standards"],
-        detailedItems: [
-          "Cotton Fabrics - Premium cotton textiles in various weights and finishes",
-          "Silk Materials - Luxurious silk fabrics with traditional and modern designs",
-          "Ready-Made Garments - Fashionable clothing for men, women, and children",
-          "Home Textiles - Bed linens, curtains, and decorative fabric items",
-          "Technical Textiles - Specialized fabrics for industrial and technical applications",
-          "Organic Textiles - Eco-friendly and sustainably produced fabric materials"
-        ],
-        categoryIcon: "🧵",
-        gradient: "linear-gradient(135deg, #f093fb, #f5576c)"
-      },
-      {
-        name: "Industrial Machinery",
-        description: "Heavy-duty manufacturing equipment and industrial machinery solutions for various sectors including construction and manufacturing.",
-        category: "machinery",
-        image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-        specifications: ["Heavy Duty", "Precision Engineering", "Maintenance Support", "Energy Efficient"],
-        detailedItems: [
-          "Manufacturing Equipment - Automated machinery for production lines",
-          "Construction Machinery - Heavy equipment for building and infrastructure",
-          "Agricultural Machinery - Farming equipment and processing machines",
-          "Textile Machinery - Specialized equipment for fabric production",
-          "Food Processing Equipment - Machines for food manufacturing and packaging",
-          "Packaging Machinery - Automated systems for product packaging and labeling"
-        ],
-        categoryIcon: "⚙️",
-        gradient: "linear-gradient(135deg, #4facfe, #00f2fe)"
-      }
+
     ];
 
     sampleProducts.forEach(product => {

@@ -27,53 +27,68 @@ export default function About() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="bg-brand-light py-20">
+      <section className="bg-gradient-to-br from-brand-blue to-blue-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-brand-dark mb-6">About GlobalTrade Solutions</h1>
-          <p className="text-xl text-brand-gray max-w-3xl mx-auto">
-            Your trusted partner in international trade for over 15 years, connecting businesses across continents with reliable, efficient import and export services.
+          <h1 className="text-5xl font-bold mb-6">About Sri Nandi</h1>
+          <p className="text-xl max-w-3xl mx-auto opacity-90">
+            A trusted and emerging brand committed to delivering high-quality, authentic products rooted in traditional values and purity.
           </p>
         </div>
       </section>
 
-      {/* Main About Content */}
+      {/* Brand Story */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div>
               <h2 className="text-4xl font-bold text-brand-dark mb-6">Our Story</h2>
               <p className="text-lg text-brand-gray mb-6">
-                Founded in 2009, GlobalTrade Solutions began as a small import business with a vision to simplify international trade for businesses of all sizes. Over the years, we have grown into a comprehensive trade solutions provider, helping thousands of companies expand their global reach.
+                Sri Nandi is a trusted and emerging brand committed to delivering high-quality, authentic products rooted in traditional values and purity. Founded with a passion for excellence and a vision to bring premium, natural products to every household.
               </p>
+              
+              <h3 className="text-2xl font-bold text-brand-dark mb-4">Our Philosophy</h3>
               <p className="text-lg text-brand-gray mb-6">
-                Our journey started with a simple belief: that international trade should be accessible, transparent, and efficient for everyone. Today, we are proud to be a leading force in connecting businesses worldwide, facilitating billions in trade value annually.
-              </p>
-              <p className="text-lg text-brand-gray">
-                With our headquarters strategically located in the Global Business District and offices in key trading hubs worldwide, we are positioned to serve our clients' needs around the clock.
+                Sri Nandi is more than just a brand—it's a commitment to health, heritage, and honesty. Every product is crafted with devotion and undergoes strict quality checks to ensure our customers receive only the best.
               </p>
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&h=750"
-                alt="Our team"
+                src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&h=750"
+                alt="Sri Nandi agricultural products"
                 className="rounded-xl shadow-lg w-full h-auto"
               />
             </div>
           </div>
 
-          {/* Mission & Vision */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-            <div className="bg-brand-light p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Our Mission</h3>
-              <p className="text-brand-gray">
-                To empower businesses worldwide by providing reliable, efficient, and innovative import-export solutions that drive growth and create lasting global partnerships. We are committed to simplifying international trade and making it accessible to companies of all sizes.
-              </p>
-            </div>
-            <div className="bg-white border-2 border-brand-blue p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Our Vision</h3>
-              <p className="text-brand-gray">
-                To be the world's most trusted and innovative international trade partner, recognized for our excellence in service, commitment to quality, and ability to connect businesses across continents while contributing to global economic growth.
-              </p>
+          {/* Our Products Section */}
+          <div className="bg-brand-light p-12 rounded-2xl mb-20">
+            <h3 className="text-3xl font-bold text-brand-dark mb-8 text-center">Our Products</h3>
+            <p className="text-lg text-brand-gray mb-8 text-center max-w-4xl mx-auto">
+              At Sri Nandi, we offer a wide range of carefully curated products that reflect our commitment to purity and tradition:
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h4 className="text-xl font-bold text-brand-dark mb-3">🌾 Premium Rice Varieties</h4>
+                <ul className="space-y-2 text-brand-gray">
+                  <li><strong>Sri Nandi Sona Masoori Rice</strong> – Lightweight, aromatic, and perfect for everyday meals. Sourced from premium fields and hygienically processed.</li>
+                  <li><strong>Sri Nandi Basmati Rice</strong> – Aged, long-grain, and fragrant rice ideal for biryanis, pulao, and special occasions.</li>
+                </ul>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h4 className="text-xl font-bold text-brand-dark mb-3">🫘 Premium Dals</h4>
+                <p className="text-brand-gray">
+                  <strong>Sri Nandi Dals</strong> – High-quality, unpolished dals including Toor Dal, Moong Dal, Urad Dal, and Chana Dal. Naturally processed and packed for freshness.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-sm md:col-span-2">
+                <h4 className="text-xl font-bold text-brand-dark mb-3">🌶️ Authentic Spices</h4>
+                <p className="text-brand-gray">
+                  <strong>Sri Nandi Spices</strong> – A range of pure and flavorful spices such as Turmeric, Red Chilli Powder, Coriander Powder, Cumin, Mustard Seeds, and Garam Masala—sourced from trusted farms and ground to perfection.
+                </p>
+              </div>
             </div>
           </div>
 
