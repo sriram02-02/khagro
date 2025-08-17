@@ -15,7 +15,7 @@ export default function ContactInfoDialog({ isOpen, onClose, product, specificIt
   const { toast } = useToast();
 
   const contactInfo = {
-    email: "info@globaltrade.com",
+    email: "info@khagroexports.com",
     phone: "+1 (555) 123-4567",
     whatsapp: "+1 (555) 123-4567",
     address: "123 Trade Center, Global Business District"
@@ -42,7 +42,7 @@ export default function ContactInfoDialog({ isOpen, onClose, product, specificIt
   };
 
   const generateEmailBody = () => {
-    let body = `Dear GlobalTrade Solutions Team,\n\nI am interested in learning more about `;
+    let body = `Dear KH AGRO STOCKIST & EXPORTERS Team,\n\nI am interested in learning more about `;
     if (specificItem) {
       body += `${specificItem} from your ${product?.name} category`;
     } else if (product) {

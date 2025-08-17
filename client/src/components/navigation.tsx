@@ -12,7 +12,7 @@ export default function Navigation() {
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/products", label: "Products" },
-    { href: "/gallery", label: "Gallery" },
+    { href: "/custom-brand-solutions", label: "Custom Brand Solutions" },
   ];
 
   const toggleMobileMenu = () => {
@@ -25,7 +25,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/">
-              <h1 className="text-2xl font-bold text-brand-blue">GlobalTrade Solutions</h1>
+              <h1 className="text-xl font-bold text-brand-blue">KH AGRO STOCKIST & EXPORTERS PVT. LTD.</h1>
             </Link>
           </div>
 

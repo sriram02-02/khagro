@@ -1,8 +1,8 @@
-# GlobalTrade Solutions - Import/Export Business Platform
+# KH AGRO STOCKIST & EXPORTERS PVT. LTD. - Agricultural Export Business Platform
 
 ## Overview
 
-GlobalTrade Solutions is a full-stack web application for an international import/export business. The platform showcases company services, products, and provides contact functionality for potential clients. Built with a modern tech stack, it features a React frontend with TypeScript, Express.js backend, and PostgreSQL database with Drizzle ORM for data management.
+KH AGRO STOCKIST & EXPORTERS PVT. LTD. is a full-stack web application for an agricultural export business specializing in rice, pulses, and spices. The platform showcases premium quality agricultural products, company services, and provides enquiry functionality for B2B clients. Built with a modern tech stack, it features a React frontend with TypeScript, Express.js backend, and PostgreSQL database with Drizzle ORM for data management.
 
 ## User Preferences
 
@@ -28,7 +28,7 @@ Preferred communication style: Simple, everyday language.
 ### Data Layer
 - **ORM**: Drizzle ORM with PostgreSQL dialect for database operations
 - **Schema**: Shared TypeScript schema definitions between client and server
-- **Tables**: Products table with categories, specifications, and images; Contact submissions table for form data
+- **Tables**: Products table with agricultural categories (rice, pulses, spices), detailed items, specifications, and images; Contact submissions table for enquiry data
 - **Validation**: Drizzle-zod integration for automatic schema validation from database models
 
 ### Project Structure
