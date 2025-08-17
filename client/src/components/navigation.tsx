@@ -26,7 +26,20 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/">
               <div className="flex items-center space-x-3">
-                <div className="bg-gradient-to-br from-brand-blue to-blue-700 p-2 rounded-lg">
+                <img 
+                  src="https://drive.google.com/uc?export=view&id=1PhswZMhoPaAGb_9iGAolI6PUFouF_iuj" 
+                  alt="Sri Chakra Logo" 
+                  className="h-12 w-12 object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    const fallback = target.nextElementSibling as HTMLDivElement | null;
+                    target.style.display = 'none';
+                    if (fallback) {
+                      fallback.style.display = 'flex';
+                    }
+                  }}
+                />
+                <div className="bg-gradient-to-br from-brand-blue to-blue-700 p-2 rounded-lg" style={{ display: 'none' }}>
                   <span className="text-white font-bold text-lg">🌾</span>
                 </div>
                 <h1 className="text-lg font-bold bg-gradient-to-r from-brand-blue to-blue-700 bg-clip-text text-transparent">

@@ -15,10 +15,10 @@ export default function ContactInfoDialog({ isOpen, onClose, product, specificIt
   const { toast } = useToast();
 
   const contactInfo = {
-    email: "info@khagroexports.com",
-    phone: "+1 (555) 123-4567",
-    whatsapp: "+1 (555) 123-4567",
-    address: "123 Trade Center, Global Business District"
+    email: "khagrofoods@gmail.com",
+    phone: "+91 9948547000",
+    whatsapp: "+91 9948547000",
+    address: "Flat No. 304, Krisals County, Syamala Nagar, Guntur - 522006, Andhra Pradesh, India"
   };
 
   const copyToClipboard = (text: string, type: string) => {
@@ -165,15 +165,7 @@ export default function ContactInfoDialog({ isOpen, onClose, product, specificIt
             </Button>
           </div>
 
-          {/* Business Hours */}
-          <div className="text-center p-4 bg-gray-50 rounded-lg">
-            <h4 className="font-semibold text-brand-dark mb-2">Business Hours</h4>
-            <p className="text-brand-gray text-sm">
-              Monday - Friday: 9:00 AM - 6:00 PM<br />
-              Saturday: 9:00 AM - 2:00 PM<br />
-              <span className="text-red-600">Sunday: Closed</span>
-            </p>
-          </div>
+
 
           {/* Call to Action */}
           <div className="text-center">

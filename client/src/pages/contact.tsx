@@ -50,6 +50,49 @@ export default function Contact() {
   });
 
   const onSubmit = (data: InsertContact) => {
+    // Generate WhatsApp message
+    const whatsappMessage = `Hi KH AGRO STOCKIST & EXPORTERS! 
+    
+New customer inquiry:
+Name: ${data.firstName} ${data.lastName}
+Company: ${data.company || 'Not specified'}
+Email: ${data.email}
+Service Interest: ${data.service}
+
+Message: ${data.message}
+
+Please contact me for further details.`;
+
+    // Generate email content
+    const emailSubject = encodeURIComponent(`New Inquiry from ${data.firstName} ${data.lastName} - ${data.service}`);
+    const emailBody = encodeURIComponent(`Dear KH AGRO STOCKIST & EXPORTERS Team,
+
+You have received a new inquiry through your website:
+
+Customer Details:
+- Name: ${data.firstName} ${data.lastName}
+- Email: ${data.email}
+- Company: ${data.company || 'Not specified'}
+- Service Interest: ${data.service}
+
+Message:
+${data.message}
+
+Please contact the customer at: ${data.email}
+
+Best regards,
+Website Contact Form`);
+
+    // Open WhatsApp
+    const whatsappNumber = "919948547000"; // Remove + and spaces
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+
+    // Open email client
+    const emailUrl = `mailto:khagrofoods@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+    window.open(emailUrl, '_blank');
+
+    // Still submit to backend for record keeping
     submitContactMutation.mutate(data);
   };
 
@@ -57,22 +100,17 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Address",
-      content: "123 Trade Center, Global Business District\nInternational City, IC 12345"
+      content: "Flat No. 304, Krisals County, Syamala Nagar,\nGuntur - 522006, Andhra Pradesh, India"
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "+1 (555) 123-4567"
+      content: "+91 9948547000"
     },
     {
       icon: Mail,
       title: "Email",
-      content: "info@globaltrade.com"
-    },
-    {
-      icon: Clock,
-      title: "Business Hours",
-      content: "Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 9:00 AM - 2:00 PM"
+      content: "khagrofoods@gmail.com"
     }
   ];
 
@@ -83,7 +121,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-brand-dark mb-6">Contact Us</h1>
           <p className="text-xl text-brand-gray max-w-3xl mx-auto">
-            Ready to start your import/export journey? Get in touch with our team of experts
+            Ready to explore premium Sri Nandi agricultural products? Get in touch with our export specialists
           </p>
         </div>
       </section>
@@ -199,10 +237,11 @@ export default function Contact() {
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value="export">Export Services</SelectItem>
-                              <SelectItem value="import">Import Services</SelectItem>
-                              <SelectItem value="logistics">Logistics Management</SelectItem>
-                              <SelectItem value="consulting">Trade Consulting</SelectItem>
+                              <SelectItem value="rice">Premium Rice Varieties</SelectItem>
+                              <SelectItem value="pulses">Pulses & Dals</SelectItem>
+                              <SelectItem value="spices">Authentic Spices</SelectItem>
+                              <SelectItem value="custom-branding">Custom Brand Solutions</SelectItem>
+                              <SelectItem value="bulk-orders">Bulk Export Orders</SelectItem>
                             </SelectContent>
                           </Select>
                           <FormMessage />
@@ -243,52 +282,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Office Locations */}
-      <section className="bg-brand-light py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-brand-dark mb-4">Global Presence</h2>
-            <p className="text-xl text-brand-gray max-w-3xl mx-auto">
-              With offices worldwide, we're always close to our clients
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
-              <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-brand-dark mb-2">North America</h3>
-                <p className="text-brand-gray text-sm mb-4">
-                  123 Trade Center<br />
-                  International City, IC 12345<br />
-                  +1 (555) 123-4567
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-brand-dark mb-2">Europe</h3>
-                <p className="text-brand-gray text-sm mb-4">
-                  45 Commerce Plaza<br />
-                  London, UK EC1A 1BB<br />
-                  +44 20 7946 0958
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-brand-dark mb-2">Asia Pacific</h3>
-                <p className="text-brand-gray text-sm mb-4">
-                  88 Business Tower<br />
-                  Singapore 018956<br />
-                  +65 6123 4567
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
