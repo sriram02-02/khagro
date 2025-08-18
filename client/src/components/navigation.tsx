@@ -12,7 +12,6 @@ export default function Navigation() {
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/products", label: "Products" },
-    { href: "/custom-brand-solutions", label: "Custom Brand Solutions" },
   ];
 
   const toggleMobileMenu = () => {

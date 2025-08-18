@@ -9,7 +9,7 @@ import About from "@/pages/about";
 import Services from "@/pages/services";
 import Products from "@/pages/products";
 import Contact from "@/pages/contact";
-import CustomBrandSolutions from "@/pages/custom-brand-solutions";
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 
@@ -20,7 +20,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
       <Route path="/products" component={Products} />
-      <Route path="/custom-brand-solutions" component={CustomBrandSolutions} />
+
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>

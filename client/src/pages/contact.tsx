@@ -63,32 +63,32 @@ Message: ${data.message}
 
 Please contact me for further details.`;
 
-    // Generate email content
-    const emailSubject = encodeURIComponent(`New Inquiry from ${data.firstName} ${data.lastName} - ${data.service}`);
+    // Generate email content (this will open the customer's email client to send to khagrofoods@gmail.com)
+    const emailSubject = encodeURIComponent(`Inquiry from ${data.firstName} ${data.lastName} - ${data.service}`);
     const emailBody = encodeURIComponent(`Dear KH AGRO STOCKIST & EXPORTERS Team,
 
-You have received a new inquiry through your website:
+I am interested in your agricultural products and would like to inquire about:
 
-Customer Details:
+My Details:
 - Name: ${data.firstName} ${data.lastName}
 - Email: ${data.email}
 - Company: ${data.company || 'Not specified'}
-- Service Interest: ${data.service}
+- Product Interest: ${data.service}
 
-Message:
+My Message:
 ${data.message}
 
-Please contact the customer at: ${data.email}
+Please contact me at ${data.email} or ${data.company ? `at ${data.company}` : 'my provided email'} for further discussion.
 
 Best regards,
-Website Contact Form`);
+${data.firstName} ${data.lastName}`);
 
     // Open WhatsApp
-    const whatsappNumber = "919948547000"; // Remove + and spaces
+    const whatsappNumber = "919948547000";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
 
-    // Open email client
+    // Open customer's email client to send to khagrofoods@gmail.com
     const emailUrl = `mailto:khagrofoods@gmail.com?subject=${emailSubject}&body=${emailBody}`;
     window.open(emailUrl, '_blank');
 
@@ -240,7 +240,7 @@ Website Contact Form`);
                               <SelectItem value="rice">Premium Rice Varieties</SelectItem>
                               <SelectItem value="pulses">Pulses & Dals</SelectItem>
                               <SelectItem value="spices">Authentic Spices</SelectItem>
-                              <SelectItem value="custom-branding">Custom Brand Solutions</SelectItem>
+
                               <SelectItem value="bulk-orders">Bulk Export Orders</SelectItem>
                             </SelectContent>
                           </Select>

@@ -40,11 +40,7 @@ export default function Footer() {
                   <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Products</span>
                 </Link>
               </li>
-              <li>
-                <Link href="/custom-brand-solutions">
-                  <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Custom Brand Solutions</span>
-                </Link>
-              </li>
+
               <li>
                 <Link href="/contact">
                   <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Contact</span>
@@ -56,9 +52,9 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>123 Trade Center, Global Business District</li>
-              <li>+1 (555) 123-4567</li>
-              <li>info@khagroexports.com</li>
+              <li>Flat No. 304, Krisals County, Syamala Nagar, Guntur - 522006, Andhra Pradesh, India</li>
+              <li>+91 9948547000</li>
+              <li>khagrofoods@gmail.com</li>
             </ul>
           </div>
         </div>
