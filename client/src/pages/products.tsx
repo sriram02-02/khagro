@@ -20,12 +20,7 @@ export default function Products() {
   });
 
   const categories = [
-    { id: "all", label: "All Products" },
-    { id: "electronics", label: "Electronics" },
-    { id: "textiles", label: "Textiles" },
-    { id: "machinery", label: "Machinery" },
-    { id: "agriculture", label: "Agriculture" },
-    { id: "spices", label: "Spices" },
+    { id: "all", label: "All Products" }
   ];
 
   const filteredProducts = products?.filter(
